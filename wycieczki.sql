@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 03 Sty 2018, 12:24
+-- Czas generowania: 05 Lut 2018, 22:43
 -- Wersja serwera: 10.1.26-MariaDB
 -- Wersja PHP: 7.1.8
 
@@ -30,21 +30,22 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `wycieczki` (
   `id` int(11) NOT NULL,
-  `kraj` varchar(20) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
-  `miasto` varchar(20) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
-  `opis` text CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
-  `zdjecie` varchar(300) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `kraj` varchar(20) CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL,
+  `miasto` varchar(20) CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL,
+  `zabytek` varchar(100) CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL,
+  `zdjecie` varchar(300) CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL,
+  `opis` mediumtext CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Zrzut danych tabeli `wycieczki`
 --
 
-INSERT INTO `wycieczki` (`id`, `kraj`, `miasto`, `opis`, `zdjecie`) VALUES
-(1, 'Polska', 'Płock', 'qwerty', ''),
-(2, 'Polska', 'Warszawa', 'sdgghjj', ''),
-(3, 'Niemcy', 'Berlin', 'fghhjjbnm', ''),
-(4, 'Francja', 'Paryż', 'jbbhjhj', '');
+INSERT INTO `wycieczki` (`id`, `kraj`, `miasto`, `zabytek`, `zdjecie`, `opis`) VALUES
+(1, 'Polska', 'Płock', 'Katedra', 'plock_katedra', 'Bazylika katedralna w Płocku – najstarsza świątynia rzymskokatolicka i najcenniejszy zabytek Płocka, położona na wznoszącym się 60 m nad Wisłą Wzgórzu Tumskim, miejsce spoczynku władców Polski'),
+(4, 'Francja', 'Paryż', 'Luwr', 'paryz_luwr', 'Luwr – dawny pałac królewski w Paryżu, obecnie mieszczący największe na świecie muzeum sztuki, ponadto mieści wiele instytucji o charakterze naukowym. Jedno z największych historycznych rezydencji w Europie.'),
+(5, 'Polska', 'Płock', 'Ratusz', 'plock_ratusz', 'Klasycystyczny budynek z lat 1824-27, miejsce ostatniego posiedzenia Sejmu Królestwa Polskiego. Codziennie o godz. 12.00 i 18.00 z wieży ratusza rozlega się płocki hejnał grany przez trębacza. Atrakcją jest również scena pasowania Bolesława Krzywoustego na rycerza - naturalnej wielkości figury pojawiają się na wieży po hejnale o godz. 12.00.\r\n'),
+(6, 'Polska', 'Kraków', 'Zamek', 'krakow_zamek', 'Zamek Królewski na Wawelu – zamek obronno-rezydencyjny w Krakowie, na Wawelu, o powierzchni 7040 m² z 71 salami wystawowymi. Oddział Zamku Królewskiego na Wawelu – Państwowych Zbiorów Sztuki.');
 
 --
 -- Indeksy dla zrzutów tabel
@@ -64,7 +65,7 @@ ALTER TABLE `wycieczki`
 -- AUTO_INCREMENT dla tabeli `wycieczki`
 --
 ALTER TABLE `wycieczki`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;COMMIT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
